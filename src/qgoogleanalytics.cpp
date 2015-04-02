@@ -1,4 +1,5 @@
 #include "qgoogleanalyticsconstructor.h"
+#include "qgoogleanalytics_parameters.h"
 #include "qgoogleanalytics.h"
 #include "QMutex"
 #include <QNetworkAccessManager>
@@ -6,7 +7,7 @@
 /**
  * @brief m_instance
  */
-QGoogleAnalytics m_instance = nullptr;
+QGoogleAnalytics *m_instance = nullptr;
 
 
 
@@ -45,6 +46,6 @@ QGoogleAnalyticsConstructor::QGoogleAnalyticsConstructor(const QString& tracking
 QGoogleAnalytics::QGoogleAnalytics(const QString& trackingID ):
     d_ptr(new QGoogleAnalyticsPrivate)
 {
-    d_ptr->trackingID = trackingID;
+    d_ptr->m_trackingID = trackingID;
     d_ptr->m_nam = new QNetworkAccessManager();
 }

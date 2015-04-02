@@ -13,7 +13,7 @@ public:
 
 
 private:
-    QGoogleAnalytics(const QString& trackingID, );
+    QGoogleAnalytics(const QString& trackingID );
 
     QGoogleAnalyticsPrivate *d_ptr;
 };
